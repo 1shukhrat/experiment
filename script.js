@@ -10,7 +10,8 @@ let keyboardCheck = false;
 cardWrapper.innerHTML = `<div class = "description">Приветствуем! <br> 
     Запоминайте пиктограммы появляющиеся в этой рамке и попробуйте их восстановить их порядок. <br>
     Выбрать пиктограмму можно кликнув на нее в панели сверху или нажатием клавиш 0-9
-    (пиктограммы в виде картинок пронумерованны в соответствии со своим порядком, десятый элемент - клавиша "0")
+    (пиктограммы в виде картинок пронумерованны в соответствии со своим порядком, десятый элемент - клавиша "0") <br>
+    <img src = "pict.png"> </img>   
     </div>`
 
 async function postData(url = "", data = {}) {
@@ -164,6 +165,7 @@ function sleep(ms) {
 
 
 document.querySelector('button.next').addEventListener('click',async (e) => {
+    keyboardCheck = false;
     e.target.setAttribute('disabled','')
     step++;
     cardWrapper.childNodes.forEach((card, i) => {
@@ -213,7 +215,7 @@ document.querySelector('button.next').addEventListener('click',async (e) => {
 
         }
     }
-    if(step) e.target.removeAttribute('disabled')
+    if(step == -1) e.target.removeAttribute('disabled')
 })
 
 const steps = [

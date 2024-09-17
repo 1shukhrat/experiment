@@ -18,9 +18,11 @@ section{
 
 .description{
     display: flex;
+    flex-direction: column;
     height: 100%;
     align-items: center;
     text-align: center;
+    justify-content: center;
     justify-self: center;
     grid-column: 1/6;
 }
