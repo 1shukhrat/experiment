@@ -190,7 +190,7 @@ document.querySelector('button.next').addEventListener('click',async (e) => {
         setTimeout(() => {
             cardWrapper.innerHTML = '';
             choosePanel.classList.remove('hide');
-        }, 750);
+        }, 1000);
         
     } else {
         if (stage < 2) {
